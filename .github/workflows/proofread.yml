@@ -6,14 +6,12 @@ on:
       - README.md
       - _typos.toml
       - .markdownlint.yaml
-      - .pre-commit-config.yaml
       - .github/workflows/proofread.yml
   pull_request:
     paths:
       - README.md
       - _typos.toml
       - .markdownlint.yaml
-      - .pre-commit-config.yaml
       - .github/workflows/proofread.yml
 
 jobs:
