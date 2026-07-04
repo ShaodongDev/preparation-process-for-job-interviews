@@ -1,0 +1,34 @@
+name: Proofread README
+
+on:
+  push:
+    paths:
+      - README.md
+      - _typos.toml
+      - .markdownlint.yaml
+      - .pre-commit-config.yaml
+      - .github/workflows/proofread.yml
+  pull_request:
+    paths:
+      - README.md
+      - _typos.toml
+      - .markdownlint.yaml
+      - .pre-commit-config.yaml
+      - .github/workflows/proofread.yml
+
+jobs:
+  proofread:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check typos
+        uses: crate-ci/typos@v1.48.0
+
+      - name: Check Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          config: .markdownlint.yaml
+          globs: README.md

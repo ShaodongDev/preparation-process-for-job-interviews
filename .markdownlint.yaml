@@ -1,0 +1,12 @@
+default: true
+
+# The README intentionally keeps GitHub-style [TOC] and long checklist lines.
+MD013: false
+MD033: false
+
+# The first heading and repository name are expected to match.
+MD025:
+  front_matter_title: ""
+
+# Allow the current personal-note style with repeated emphasis in list items.
+MD036: false
